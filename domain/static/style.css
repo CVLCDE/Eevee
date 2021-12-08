@@ -1,0 +1,33 @@
+body {
+	background-color: #ffffff8f;
+}
+
+header,
+footer {
+	background-image: url('./header_background.png');
+}
+
+header {
+	height: 200px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+footer {
+	height: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#market-update-container {
+	background-color: rgba(167, 167, 167, 0.911);
+	font-size: 24px;
+}
+
+.set-link {
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.set-link:hover {
+	-moz-box-shadow: 0 0 5px 5px #0dcaf0;
+	-webkit-box-shadow: 0 0 5px 5px #0dcaf0;
+	box-shadow: 0 0 5px 5px #0dcaf0;
+}

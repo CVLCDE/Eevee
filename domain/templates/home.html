@@ -1,0 +1,136 @@
+{% extends "base.html" %} {% block title %} Home {% endblock %} {% block content
+%}
+
+<!--  GRAILED START  -->
+<section class="contaier mb-5">
+	<h3>Grailed</h3>
+	<!--  Carousel Wrapper  -->
+	<div
+		id="carousel"
+		class="carousel slide carousel-fade"
+		data-bs-ride="carousel"
+	>
+		<!--  Inner -->
+		<div class="carousel-inner">
+			<div
+				class="
+					container
+					d-flex
+					flex-wrap
+					carousel-item
+					justify-content-center
+					active
+				"
+			>
+				{% for i in range(0,3) %}
+				<div class="card border-light text-center w-25 mx-3 my-5">
+					<img src="../static/pum.png" alt="" class="card-img-top" />
+					<div class="card-body">
+						<p class="card-text">Mimikyu</p>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+			<div
+				class="
+					container
+					d-flex
+					flex-wrap
+					carousel-item
+					justify-content-center
+				"
+			>
+				{% for i in range(0,3) %}
+				<div class="card border-light text-center w-25 mx-3 my-5">
+					<img src="../static/tim.png" alt="" class="card-img-top" />
+					<div class="card-body">
+						<p class="card-text">Mimikyu</p>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+			<div
+				class="
+					container
+					d-flex
+					flex-wrap
+					carousel-item
+					justify-content-center
+				"
+			>
+				{% for i in range(0,3) %}
+				<div class="card border-light text-center w-25 mx-3 my-5">
+					<img src="../static/ven.png" alt="" class="card-img-top" />
+					<div class="card-body">
+						<p class="card-text">Mimikyu</p>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<!--  CONTROLS STARTS  -->
+		<button
+			class="carousel-control-prev"
+			type="button"
+			data-bs-target="#carousel"
+			data-bs-slide="prev"
+		>
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button
+			class="carousel-control-next"
+			type="button"
+			data-bs-target="#carousel"
+			data-bs-slide="next"
+		>
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+		<!--  CONTROLS END  -->
+	</div>
+</section>
+
+<!--  GRAILED END  -->
+
+<!--  SET COMPLETION START  -->
+<section class="container mb-5">
+	<h3>Sets</h3>
+	<input
+		type="search"
+		class="form-control"
+		placeholder="Search for sets..."
+		aria-label="Search"
+	/>
+	<div class="container d-flex flex-wrap justify-content-center">
+		{% for i in range(0, 10)%}
+
+		<div
+			class="
+				card
+				text-center
+				w-25
+				mx-5
+				my-5
+				home-set-card
+				border-info
+				set-link
+			"
+		>
+			<div class="card-header">Fusion Strike</div>
+			<img
+				src="../static/fusion-strike-banner.jpg"
+				alt="Fusion Strike"
+				class="card-img-top"
+			/>
+			<div class="card-footer">000 / 264</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+<!--  SET COMPLETION END  -->
+{% endblock %}
