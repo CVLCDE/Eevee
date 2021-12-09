@@ -1,5 +1,5 @@
 body {
-	background-color: #ffffff8f;
+	background-color: #16113a;
 }
 
 header,
@@ -30,4 +30,59 @@ footer {
 	-moz-box-shadow: 0 0 5px 5px #0dcaf0;
 	-webkit-box-shadow: 0 0 5px 5px #0dcaf0;
 	box-shadow: 0 0 5px 5px #0dcaf0;
+}
+
+/*HOMEPAGE SECTION STYLES*/
+#home-master-set-list,
+#home-grailed-list {
+	background-color: #272953;
+	border-radius: 10px;
+}
+/*HOMEPAGE SECTION STYLES*/
+
+/*  CARD COMPONENT STYLES  */
+.card {
+	background-color: #f6ebff;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*  CARD COMPONENT STYLES  */
+
+/*  CAROUSEL STYLES */
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+	/* filter: invert(100%); */
+	width: 15%;
+	margin-top: 41%;
+}
+/*  CAROUSEL STYLES */
+
+#home-set-search {
+	background-color: #f6ebff;
+}
+
+#twitter-feed-wrapper {
+	background-color: #272953;
+	border-radius: 10px;
+	height: 97%;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+	width: 20px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #f6ebff;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #cdc4d4;
+	border-radius: 5px;
+	border: 6px solid transparent;
+	background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #918b95;
 }

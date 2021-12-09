@@ -22,24 +22,49 @@
 	<body>
 		<!--  HEADER START  -->
 		<header class="p-5 text-center bg-image">
-			<div class="d-flex justify-content-center align-items-center h-100">
-				<div class="text-white">
-					<h1 class="mb-3">EEVEE</h1>
-					<h4 class="mb-3">Subheading</h4>
-				</div>
-			</div>
-
 			<div
-				id="market-update-container"
-				class="d-flex justify-content-center align-items-center"
+				class="
+					d-flex
+					justify-content-center
+					align-items-center
+					h-100
+					flex-column
+				"
 			>
-				card prices go here
+				<h1 class="mb-3 text-white">EEVEE</h1>
+				<nav
+					class="navbar navbar-expand-lg navbar-light"
+					style="background-color: transparent"
+				>
+					<div class="container-fluid">
+						<div class="navbar-nav">
+							<button
+								class="btn btn-secondary me-2 active"
+								type="button"
+							>
+								Home
+							</button>
+							<button
+								class="btn btn-secondary me-2"
+								type="button"
+							>
+								Sets
+							</button>
+							<button
+								class="btn btn-secondary me-2"
+								type="button"
+							>
+								Grailed
+							</button>
+						</div>
+					</div>
+				</nav>
 			</div>
 		</header>
 		<!--  HEADER END  -->
 
 		<!--  CONTENT START (OVERRIDE)  -->
-		<div class="container-xxl">{% block content %} {% endblock %}</div>
+		<div class="container-fluid">{% block content %} {% endblock %}</div>
 		<!--  CONTENT END (OVERRIDE)  -->
 
 		<!--  FOOTER START  -->
@@ -74,14 +99,6 @@
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
 		></script>
-		<script>
-			type = 'text/javascript';
-			src = "{{ url_for('static', filename='index.js') }}";
-		</script>
-		<script>
-			type = 'text/javascript';
-			src = "{{ url_for('static', filename='multi-carousel.js') }}";
-		</script>
 		<!--  SCRIPTS END  -->
 	</body>
 </html>
