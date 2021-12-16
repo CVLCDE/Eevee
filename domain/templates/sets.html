@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block title %} Sets {% endblock %} {% block
+content%}
+<div class="container-fluid">
+	<div class="container text-center">
+		<h2 class="text-white py-4">Sets 📜</h2>
+		<input
+			type="search"
+			id="home-set-search"
+			class="form-control w-75 mx-auto"
+			placeholder="Search for sets..."
+			aria-label="Search"
+		/>
+	</div>
+
+	<div class="d-flex flex-wrap justify-content-center">
+		{% for i in range(set_names|length)%}
+		<div
+			class="
+				card
+				text-center
+				w-25
+				mx-5
+				my-5
+				home-set-card
+				border-info
+				set-link
+			"
+		>
+			<div class="card-header">{{ set_names[i] }}</div>
+			<img
+				src="{{ set_logos[i] }}"
+				alt="Fusion Strike"
+				class="card-img-top"
+			/>
+			<div class="card-footer">0 / {{ set_totals[i] }}</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
