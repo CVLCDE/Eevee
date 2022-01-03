@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block title %} Sets {% endblock %} {% block
+content%}
+<div class="container-fluid vh-100">
+	<h2 class="text-center text-white py-4 fs-1">Sets 📜</h2>
+
+	<div id="all-sets-container" class="px-4 overflow-auto" style="height: 87%">
+		<div class="container text-center pt-4">
+			<input
+				type="search"
+				id="home-set-search"
+				class="form-control w-75 mx-auto"
+				placeholder="Search for sets..."
+				aria-label="Search"
+			/>
+		</div>
+
+		<div class="d-flex flex-wrap justify-content-center overflow-auto">
+			{% for i in range(master_set|length)%}
+			<div
+				id="{{master_set[i]}}"
+				class="
+					flex-grow-1
+					card
+					text-center
+					w-25
+					h-25
+					mx-2
+					my-5
+					home-set-card
+					set-link
+					text-white
+					bg-dark
+					fs-5
+				"
+			>
+				<a
+					class="link-light text-decoration-none"
+					href="{{  url_for('set_views.specific_set')  }}"
+				>
+					<div class="card-header">{{ master_set[i]['name'] }}</div>
+					<div class="container my-3" style="height: 140px">
+						<img
+							src="{{ master_set[i]['logo'] }}"
+							alt="Fusion Strike"
+							class="card-img-top"
+							style="object-fit: contain; height: 100%"
+						/>
+					</div>
+
+					<div class="card-footer">
+						0 / {{ master_set[i]["set_count"] }}
+					</div>
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}

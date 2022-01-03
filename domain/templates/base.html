@@ -16,7 +16,7 @@
 			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="../static/style.css" />
+		<link rel="stylesheet" href="../static/styles/style.css" />
 		<title>{% block title %} Home {% endblock %}</title>
 	</head>
 	<body>
@@ -38,24 +38,21 @@
 				>
 					<div class="container-fluid">
 						<div class="navbar-nav">
-							<button
+							<a
+								href="{{  url_for('home_views.home')  }}"
 								class="btn btn-secondary me-2 active"
-								type="button"
+								>Home</a
 							>
-								Home
-							</button>
-							<button
-								class="btn btn-secondary me-2"
-								type="button"
+							<a
+								href="{{  url_for('set_views.all_sets')  }}"
+								class="btn btn-secondary me-2 active"
+								>Sets</a
 							>
-								Sets
-							</button>
-							<button
-								class="btn btn-secondary me-2"
-								type="button"
+							<a
+								href="{{  url_for('grailed_views.all_grails')  }}"
+								class="btn btn-secondary me-2 active"
+								>Grailed</a
 							>
-								Grailed
-							</button>
 						</div>
 					</div>
 				</nav>
@@ -64,7 +61,31 @@
 		<!--  HEADER END  -->
 
 		<!--  CONTENT START (OVERRIDE)  -->
-		<div class="container-fluid">{% block content %} {% endblock %}</div>
+		<div class="container-fluid d-flex h-100">
+			{% block content %} {% endblock %}
+
+			<!--  TWITTER FEED START  -->
+			<div id="twitter-feed-container" class="container w-25 mt-5">
+				<section
+					id="twitter-feed-wrapper"
+					class="px-5 py-4 text-center"
+				>
+					<h2 class="text-white pb-1">News 📰</h2>
+					<a
+						class="twitter-timeline"
+						data-theme="dark"
+						data-height="97%"
+						href="https://twitter.com/pokebeach?ref_src=twsrc%5Etfw"
+						>Tweets by pokebeach</a
+					>
+					<script
+						async
+						src="https://platform.twitter.com/widgets.js"
+						charset="utf-8"
+					></script>
+				</section>
+			</div>
+		</div>
 		<!--  CONTENT END (OVERRIDE)  -->
 
 		<!--  FOOTER START  -->
@@ -99,13 +120,7 @@
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
 		></script>
-		<script src="../static/index.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-			integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
-			crossorigin="anonymous"
-			async
-		></script>
+		<script src="../static/js/searchbar.js"></script>
 		<!--  SCRIPTS END  -->
 	</body>
 </html>

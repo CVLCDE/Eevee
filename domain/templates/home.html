@@ -1,195 +1,108 @@
 {% extends "base.html" %} {% block title %} Home {% endblock %} {% block content
 %}
 
-<div class="d-flex">
-	<div class="container w-75">
-		<!--  GRAILED START  -->
-		<section id="home-grailed-list" class="container mb-5">
-			<!--  Carousel Wrapper  -->
-			<div
-				id="carousel"
-				class="carousel slide carousel-fade text-center my-5"
-				data-bs-ride="carousel"
-			>
-				<h2 class="text-white pt-4">Grailed 👑</h2>
-				<!--  Inner -->
-				<div class="carousel-indicators">
-					<button
-						type="button"
-						data-bs-target="#carousel"
-						data-bs-slide-to="0"
-						class="active"
-						aria-current="true"
-						aria-label="Slide 1"
-					></button>
-					<button
-						type="button"
-						data-bs-target="#carousel"
-						data-bs-slide-to="1"
-						aria-label="Slide 2"
-					></button>
-					<button
-						type="button"
-						data-bs-target="#carousel"
-						data-bs-slide-to="2"
-						aria-label="Slide 3"
-					></button>
-				</div>
-				<div class="carousel-inner d-flex px-5 pb-5 pt-0">
-					{% for i in range(0,4) %}
-					<div
-						class="
-							card
-							bg-dark
-							border-dark
-							text-center
-							w-25
-							h-25
-							mx-3
-							my-5
-							py-5
-							px-5
-						"
-					>
-						<img
-							src="../static/pum.png"
-							alt=""
-							class="card-img-top"
-						/>
-						<div class="card-body">
-							<p class="card-text">Mimikyu</p>
-						</div>
-					</div>
-					{% endfor %}
-				</div>
-
-				<!--  CONTROLS STARTS  -->
-				<button
-					class="carousel-control-prev"
-					type="button"
-					data-bs-target="#carousel"
-					data-bs-slide="prev"
-				>
-					<span
-						class="carousel-control-prev-icon"
-						aria-hidden="true"
-					></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button
-					class="carousel-control-next"
-					type="button"
-					data-bs-target="#carousel"
-					data-bs-slide="next"
-				>
-					<span
-						class="carousel-control-next-icon"
-						aria-hidden="true"
-					></span>
-					<span class="visually-hidden">Next</span>
-				</button>
-				<!--  CONTROLS END  -->
-			</div>
-		</section>
-
-		<!--  SET COMPLETION START  -->
-		<section
-			id="home-master-set-list"
-			class="container mb-5 text-center overflow-auto vh-100"
-		>
-			<h2 class="text-white py-4">Sets 📜</h2>
+<div class="container w-75">
+	<!--  GRAILED START  -->
+	<section id="home-grailed-list" class="container-fluid my-5 text-center">
+		<div class="container h-100">
+			<h2 class="text-white pt-4">Grailed 👑</h2>
 			<input
 				type="search"
-				id="home-set-search"
+				id="home-grailed-search"
 				class="form-control w-75 mx-auto"
 				placeholder="Search for sets..."
 				aria-label="Search"
 			/>
-			<div class="container d-flex flex-wrap justify-content-center">
-				{% for i in range(set_names|length)%}
+			{% if grailed_data|length == 0 %}
+			<div class="text-white fs-1 text-center text-lg-center h-100">
+				NO GRAILED CARDS FOUND 😔
+			</div>
+			{% else %}
+			<div class="d-flex flex-nowrap overflow-auto">
+				{% for i in range(0, 25) %}
 				<div
 					class="
 						card
-						text-center
+						text-white
+						bg-dark
+						mx-4
+						my-4
+						flex-grow-0 flex-shrink-0
+						align-items-center
 						w-25
-						mx-5
-						my-5
-						home-set-card
-						border-info
-						set-link
+						h-25
 					"
 				>
-					<div class="card-header">{{ set_names[i] }}</div>
+					<div class="card-header">cute mage</div>
 					<img
-						src="{{ set_logos[i] }}"
-						alt="Fusion Strike"
+						src="../static/assets/butts.jpg"
+						alt=""
 						class="card-img-top"
 					/>
-					<div class="card-footer">0 / {{ set_totals[i] }}</div>
+					<div class="card-footer">Price Data goes here</div>
 				</div>
 				{% endfor %}
 			</div>
-		</section>
-	</div>
-
-	<!--  TWITTER FEED START  -->
-	<div class="container w-25 mt-5">
-		<section id="twitter-feed-wrapper" class="px-5 py-4 text-center">
-			<h2 class="text-white pb-1">News 📰</h2>
-			<a
-				class="twitter-timeline"
-				data-theme="dark"
-				data-height="97%"
-				href="https://twitter.com/pokebeach?ref_src=twsrc%5Etfw"
-				>Tweets by pokebeach</a
-			>
-			<script
-				async
-				src="https://platform.twitter.com/widgets.js"
-				charset="utf-8"
-			></script>
-		</section>
-	</div>
-
-	<!-- GRAIL MODAL START -->
-	<div
-		class="modal fade"
-		id="add-grail-modal"
-		data-bs-backdrop="static"
-		data-bs-keyboard="false"
-		tabindex="-1"
-		aria-labelledby="add-grail-modal"
-		aria-hidden="true"
-	>
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="add-grail-modal-title">
-						Modal title
-					</h5>
-					<button
-						type="button"
-						class="btn-close"
-						data-bs-dismiss="modal"
-						aria-label="Close"
-					></button>
-				</div>
-				<div class="modal-body">...</div>
-				<div class="modal-footer">
-					<button
-						type="button"
-						class="btn btn-secondary"
-						data-bs-dismiss="modal"
-					>
-						Close
-					</button>
-					<button type="button" class="btn btn-primary">
-						Understood
-					</button>
-				</div>
-			</div>
+			{% endif %}
 		</div>
-	</div>
+	</section>
+
+	<!--  SET COMPLETION START  -->
+	<section
+		id="home-master-set-list"
+		class="container mb-5 text-center overflow-auto"
+		style="height: 500px"
+	>
+		<h2 class="text-white py-4">Sets 📜</h2>
+		<input
+			type="search"
+			id="home-set-search"
+			class="form-control w-75 mx-auto"
+			placeholder="Search for sets..."
+			aria-label="Search"
+		/>
+		<div class="container-fluid d-flex flex-wrap justify-content-center">
+			{% for set_id in master_set %}
+			<div
+				id="{{ set_id }}"
+				class="
+					card
+					flex-grow-1
+					home-set-card
+					set-link
+					text-white text-center
+					bg-dark
+					fs-5
+					w-25
+					h-25
+					mx-2
+					my-5
+				"
+			>
+				<a
+					class="link-light text-decoration-none"
+					href="{{  url_for('set_views.specific_set', id=set_id )  }}"
+				>
+					<div class="card-header">
+						{{ master_set[set_id]["set_name"] }}
+					</div>
+					<div class="container my-3" style="height: 140px">
+						<img
+							src="{{ master_set[set_id]['set_logo'] }}"
+							alt="Set Logo"
+							class="card-img-top"
+							style="object-fit: contain; height: 100%"
+						/>
+					</div>
+
+					<div class="card-footer">
+						0 / {{ master_set[set_id]["set_count"] }}
+					</div>
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+	</section>
 </div>
 
 {% endblock %}
