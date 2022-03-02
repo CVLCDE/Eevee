@@ -1,13 +1,15 @@
-let searchbar = document.getElementById('home-set-search')
+let searchbar = document.getElementById('searchbar')
 
 searchbar.addEventListener("input", (e) => {
-    let input = searchbar.value
-    let setItems = document.getElementsByClassName('home-set-card')
-    for (i = 0; i < setItems.length; i++) {
-        if (!setItems[i].id.toLowerCase().includes(input)) {
-            setItems[i].style.display = "none";
+    let input = searchbar.value.toLowerCase()
+    //let badgeData = document.getElementsByClassName('set-or-card-badge')
+    let badges = document.querySelectorAll('.set-or-card-badge')
+    let badgeData = document.querySelectorAll('.set-or-card-badge .card-header')
+    for (i = 0; i < badges.length; i++) {
+        if (!badgeData[i].textContent.toLowerCase().startsWith(input)) {
+            badges[i].style.display = "none";
         } else {
-            setItems[i].style.display = "flex";
+            badges[i].style.display = "flex";
         }
     }
 })

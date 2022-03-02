@@ -1,17 +1,17 @@
 {% extends "base.html" %} {% block title %} Set {% endblock %} {% block content
 %}
 <div class="container-fluid vh-100">
-	<h2 class="text-white pt-4 text-center fs-1 py-4">
-		{{ set_data["set_name"] }} |
-		<img src='{{set_data["set_symbol"]}}' alt="" />
+	<h2 id="set-title" class="text-white pt-4 text-center fs-1 py-4">
+		{{ set_data["set_name"] }}
+		<img id="set-symbol" src='{{set_data["set_symbol"]}}' alt="" />
 	</h2>
 
 	<div id="specific-set-container" class="overflow-auto" style="height: 87%">
 		<div class="container">
 			<input
 				type="search"
-				id="home-set-search"
-				class="form-control w-75 mx-auto mt-5 \"
+				id="searchbar"
+				class="form-control w-75 mx-auto mt-5"
 				placeholder="Search for sets..."
 				aria-label="Search"
 			/>
@@ -20,18 +20,8 @@
 		<div class="d-flex flex-wrap justify-content-center overflow-auto">
 			{% for i in range(set_cards|length) %}
 			<div
-				id="{{ set_cards[i]['id'] }}"
-				class="
-					card
-					text-center
-					w-25
-					mx-5
-					my-5
-					align-items-center
-					bg-dark
-					text-white
-					home-set-card
-				"
+				id="{{ set_cards[i].id }}"
+				class="card text-center w-25 mx-5 my-5 align-items-center bg-dark text-white home-set-card set-or-card-badge"
 			>
 				<div class="card-header">{{ set_cards[i]["name"] }}</div>
 				<img
@@ -39,7 +29,27 @@
 					alt="Pokemon Card"
 					class="card-img-top"
 				/>
-				<div class="card-footer">placeholder</div>
+				<div class="card-footer w-100 d-flex justify-content-around">
+					<div
+						id="{{ set_cards[i]['name'] }}-button-container"
+						class="button-status-container"
+					>
+							{% if set_cards[i].id in grailed_cards %}
+							<button class="btn btn-warning btn-lg status-button grailed-button">
+								👑
+							</button>
+							{% elif set_cards[i].id in owned_cards %}
+							<button class="btn btn-success btn-lg status-button owned-button">
+								✔️
+							</button>
+							{% else %}
+							<button class="btn btn-danger btn-lg status-button not-owned-button">
+								❌
+							</button>
+							{% endif %}
+						</button>
+					</div>
+				</div>
 			</div>
 			{% endfor %}
 		</div>

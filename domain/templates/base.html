@@ -23,13 +23,7 @@
 		<!--  HEADER START  -->
 		<header class="p-5 text-center bg-image">
 			<div
-				class="
-					d-flex
-					justify-content-center
-					align-items-center
-					h-100
-					flex-column
-				"
+				class="d-flex justify-content-center align-items-center h-100 flex-column"
 			>
 				<h1 class="mb-3 text-white">EEVEE</h1>
 				<nav
@@ -39,7 +33,7 @@
 					<div class="container-fluid">
 						<div class="navbar-nav">
 							<a
-								href="{{  url_for('home_views.home')  }}"
+								href="{{  url_for('home_route.home')  }}"
 								class="btn btn-secondary me-2 active"
 								>Home</a
 							>
@@ -90,13 +84,7 @@
 
 		<!--  FOOTER START  -->
 		<footer
-			class="
-				p-5
-				text-center
-				justify-content-center
-				align-items-center
-				bg-image
-			"
+			class="p-5 text-center justify-content-center align-items-center bg-image"
 		>
 			<div>
 				<div>Footer</div>
@@ -120,7 +108,9 @@
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
 		></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="../static/js/searchbar.js"></script>
+		<script src="../static//js/set_button_functionality.js"></script>
 		<!--  SCRIPTS END  -->
 	</body>
 </html>

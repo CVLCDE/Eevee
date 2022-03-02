@@ -1,3 +1,7 @@
+/*
+	======================== GENERAL STYLES ========================
+*/
+
 body {
 	background-color: #16113a;
 }
@@ -15,6 +19,17 @@ header {
 footer {
 	height: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*
+	================================================================
+*/
+
+/*
+	======================== HOME.HTML STYLES ========================
+*/
+#home-grailed-section-container {
+	background-color: #272953;
+	border-radius: 10px;
 }
 
 #market-update-container {
@@ -55,7 +70,7 @@ footer {
 	width: 15%;
 }
 
-#home-set-search {
+#searchbar {
 	background-color: #f6ebff;
 }
 
@@ -99,6 +114,10 @@ footer {
 	max-width: 75%;
 }
 
-.home-set-card {
+.set-or-card-badge {
 	transition: display 0s, opacity 0.5s linear;
+}
+
+#set-symbol{
+	max-width: 100%;
 }

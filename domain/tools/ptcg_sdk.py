@@ -35,3 +35,6 @@ def organized_master_set() -> dict:
                 "set_cards": get_all_cards_from_set,
             }
     return master_set
+
+def get_card_from_set(card_id) -> object:
+    return Card.where(q=f"id:{card_id}")
